@@ -9,7 +9,7 @@ $SysLogServers = "tcp://syslog.lab.local"
 
 #Cycles through each UCS setting values
 Foreach ($array in $arrays) {
-  Write-Host "Getting Syslog Information for $array"
+  Write-Host "Setting Syslog Information for $array"
   $FlashArray = New-PfaArray -EndPoint $array -Credentials $cred -IgnoreCertificateError
   Set-PfaSyslogServers -Array $FlashArray -SyslogServers $SyslogServers|fl
 }
